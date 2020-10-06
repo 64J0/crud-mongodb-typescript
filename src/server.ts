@@ -1,8 +1,12 @@
 import express from 'express';
 
+import routes from './routes';
+import dbExecute from './database';
+
 const app = express();
 
-app.get('/', (request, response) => response.json({ message: 'Hello World' }));
+dbExecute();
+app.use(routes);
 
 const port = process.env.PORT || 3333;
 const executionMessage = () => console.log(`Server running on port ${port}.`);

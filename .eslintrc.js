@@ -18,4 +18,9 @@ module.exports = {
   rules: {
     'no-console': 0,
   },
+  settings: {
+    'import/extensions': {
+      extensions: ['.js', '.ts'],
+    },
+  },
 };

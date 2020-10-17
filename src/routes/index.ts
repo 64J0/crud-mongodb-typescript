@@ -1,32 +1,11 @@
-import { Router, Request, Response } from 'express';
-import readAllDocuments from '../controllers/read';
+import { Router } from 'express';
+import usersController from '../controllers/usersController';
 
-const routes = Router();
+const router = Router();
 
-routes.get('/:schemaName', (request: Request, response: Response) => {
-  const { schemaName } = request.params;
-  console.log(schemaName);
-  const dbInfo = readAllDocuments({ schemaName });
-  return response.json(dbInfo);
-});
+router.route('/create').post(usersController.create);
+//routes.get('/:email', usersController.read);
+//routes.put('/:email', usersController.update);
+//routes.delete('/:email', usersController.delete);
 
-routes.post('/', (request: Request, response: Response) => {
-  const { name, email } = request.body;
-
-  return response.json({ name, email });
-});
-
-routes.put('/:id', (request: Request, response: Response) => {
-  const { id } = request.params;
-  const { name, email } = request.body;
-
-  return response.json({ id, name, email });
-});
-
-routes.delete('/:id', (request: Request, response: Response) => {
-  const { id } = request.params;
-
-  return response.json({ id });
-});
-
-export default routes;
+export default router;

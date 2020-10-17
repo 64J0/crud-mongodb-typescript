@@ -1,13 +1,22 @@
-import express from 'express';
-
-import routes from './routes';
-import dbExecute from './database';
+import express, { Request, Response } from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import morgan from 'morgan';
+import usersRoutes from './routes';
 
 const app = express();
 
-dbExecute();
-app.use(routes);
+app.use(cors());
+process.env.NODE_ENV !== 'prod' && app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const port = process.env.PORT || 3333;
-const executionMessage = () => console.log(`Server running on port ${port}.`);
-app.listen(port, executionMessage);
+// Rotas
+app.get('/', (request: Request, response: Response) => {
+  return response.status(200).json({
+    message: 'Hello world'
+  });
+});
+app.use(usersRoutes);
+
+export default app;

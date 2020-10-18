@@ -3,9 +3,9 @@ import usersController from '../controllers/usersController';
 
 const router = Router();
 
-router.route('/create').post(usersController.create);
-//routes.get('/:email', usersController.read);
-//routes.put('/:email', usersController.update);
-//routes.delete('/:email', usersController.delete);
+router.route('/create').post(usersController.createUser);
+router.route('/read/:id').get(usersController.readUser);
+router.route('/update/:id').put(usersController.updateUser);
+router.route('/delete/:id').delete(usersController.deleteUser);
 
 export default router;

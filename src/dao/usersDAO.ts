@@ -1,4 +1,4 @@
-import { Collection, MongoClient } from 'mongodb';
+import { Collection, MongoClient, ObjectId } from 'mongodb';
 import IUser from '../@types/user';
 
 let users: Collection;
@@ -21,6 +21,11 @@ export default class UsersDAO {
 
   static async getUser(email: string): Promise<IUser | null> {
     return await users.findOne({ email });
+  }
+
+  static async getUserById(id: string): Promise<IUser | null> {
+    const _id = new ObjectId(id);
+    return await users.findOne({ _id });
   }
 
   static async addUser(userInfo: IUser): Promise<IUser | null> {

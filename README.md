@@ -13,13 +13,20 @@ npx tsc --init
 # Instalar os pacotes adicionais...
 ```
 
-Referências:
+Algumas coisas que ainda não consegui fazer:
+
+* Quando o servidor do MongoDB fica inoperante o servidor da aplicação deve ficar inoperante também, e quando o servidor do MongoDB voltar ele deve subir novamente.
+
+---
+### Referências:
 
 [1] - MongoDB Quick Start. [Link](https://mongodb.github.io/node-mongodb-native/3.6/quick-start/quick-start/)
 
 [2] - Using TypeScript with MongoDB. [Link](https://medium.com/swlh/using-typescript-with-mongodb-393caf7adfef)
 
 [3] - MongoDB Node Driver docs. [Link](https://docs.mongodb.com/drivers/node/)
+
+[4] - M220JS - MONGODB FOR JAVASCRIPT DEVELOPERS. [Link da Mongodb University](https://university.mongodb.com/courses/M220JS/about)
 
 ---
 

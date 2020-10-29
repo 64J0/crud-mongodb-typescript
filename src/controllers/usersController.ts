@@ -24,7 +24,7 @@ export default class UserController {
         });
       }
 
-      const foundUser = await UsersDAO.getUser(userFromBody.email);
+      const foundUser = await UsersDAO.getUserByEmail(userFromBody.email);
 
       if (foundUser?._id) {
         return response.status(400).json({
@@ -114,7 +114,7 @@ export default class UserController {
         });
       }
 
-      const foundUserByEmail = await UsersDAO.getUser(userFromBody.email);
+      const foundUserByEmail = await UsersDAO.getUserByEmail(userFromBody.email);
 
       if (
         foundUserByEmail._id &&

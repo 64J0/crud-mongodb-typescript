@@ -1,4 +1,4 @@
-import app from './server';
+import app from './server/server';
 import dotenv from 'dotenv';
 import mongoConnect from './database/mongoConnect';
 
@@ -14,6 +14,6 @@ mongoConnect()
     return app.listen(port, executionMessage);
   })
   .catch((err) => {
-    console.error(err);
+    console.error(`Server failed to run. ${err}`);
     return process.exit(1);
   });

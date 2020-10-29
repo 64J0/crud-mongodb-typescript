@@ -1,21 +1,20 @@
 # Estudos sobre MongoDB
 
-Este projeto está sendo criado visando estudar o driver oficial do MongoDB para Node.js. O objetivo inicial é fazer apenas um CRUD básico.
+Este projeto está sendo criado visando estudar o driver oficial do **MongoDB** para **Node.js**. O objetivo inicial é fazer apenas um CRUD básico, ou seja, um programa capaz de executar as operações: [C]reate, [R]ead, [U]pdate e [D]elete.
 
-Além disso também estou aproveitando para estudar alguns conceitos de Typescript.
+Além disso também estou aproveitando para estudar alguns conceitos de **Typescript**.
 
-O padrão de *lint* que estou utilizando é o disponibilizado pelo Airbnb. 
+O padrão de *lint* que estou utilizando é o disponibilizado pelo Airbnb, para evitar ter que configurar esta ferramenta. 
 
 ```bash
 # Gerar o arquivo de configurações do typescript
 npx tsc --init
 
 # Instalar os pacotes adicionais...
+# Essa parte faço depois kkkkkk
 ```
 
-Algumas coisas que ainda não consegui fazer:
-
-* Quando o servidor do MongoDB fica inoperante o servidor da aplicação deve ficar inoperante também, e quando o servidor do MongoDB voltar ele deve subir novamente.
+Lembrete: *Utilizando o pacote ts-node-dev quando a instrução process.exit(1) não será executada. Para verificar seu funcionamento devemos primeiramente gerar um build do código e então executá-lo.*
 
 ---
 ### Referências:

@@ -6,7 +6,7 @@ const mongoConnect = async (): Promise<void> => {
     const client = await MongoClient.connect(
       process.env.DATABASE_CONNECTION_STRING,
       {
-        wtimeout: 2500,
+        wtimeout: 1000,
         useNewUrlParser: true,
         useUnifiedTopology: true
       }
@@ -15,8 +15,8 @@ const mongoConnect = async (): Promise<void> => {
     await UsersDAO.injectDB(client);
     return console.log('Database connected');
   } catch (err) {
-    console.error(err.stack);
-    process.exit(1);
+    console.error(`Database can't connect. ${err.stack}`);
+    return process.exit(1);
   }
 }
 
